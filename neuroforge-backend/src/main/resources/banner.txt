@@ -1,0 +1,10 @@
+===================================================
+  🧠 NEUROFORGE BACKEND - STARTED SUCCESSFULLY!
+===================================================
+  Server: http://localhost:8081
+  Swagger UI: http://localhost:8081/api/v1/swagger-ui.html
+  API Docs: http://localhost:8081/api/v1/v3/api-docs
+===================================================
+  Started at: ${spring-boot.formatted-start-time}
+  Active Profiles: ${spring.profiles.active:default}
+===================================================

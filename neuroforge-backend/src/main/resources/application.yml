@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: neuroforge-backend
+
+  datasource:
+    url: jdbc:sqlserver://localhost;databaseName=NeuroForge;integratedSecurity=true;encrypt=true;trustServerCertificate=true
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+      naming:
+        # Without this, Spring Boot's default SpringPhysicalNamingStrategy
+        # rewrites explicit @Table/@Column names into snake_case (e.g.
+        # "ProjectMembers" -> "project_members"), even when you set the
+        # name explicitly. This strategy is a no-op: it uses whatever name
+        # you put in @Table(name=...) / @Column(name=...) as-is, which is
+        # what we want since our schema is PascalCase, not snake_case.
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Custom app config, deliberately NOT under spring.* (that prefix is
+# reserved for Spring's own properties). Nothing binds to this yet —
+# a @ConfigurationProperties(prefix = "neuroforge.jwt") class gets added
+# in deliverable #6 alongside SecurityConfig/JwtAuthenticationFilter.
+neuroforge:
+  jwt:
+    secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+    expiration: 86400000
+    refresh-expiration: 604800000
+
+ai:
+  llm:
+    api-url: ${AI_API_URL:https://api.openai.com/v1}
+    api-key: ${AI_API_KEY:your-api-key-here}
+    model: ${AI_MODEL:gpt-4}
+
+logging:
+  level:
+    "[com.neuroforge]": DEBUG
+    "[org.springframework.security]": DEBUG
+    "[org.springframework.web]": DEBUG
+
+server:
+  port: 8081
+  servlet:
+    context-path: /api/v1

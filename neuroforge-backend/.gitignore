@@ -1,0 +1,99 @@
+# Compiled Java files
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.ctxt
+*.gz
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Spring Boot
+spring-boot-devtools.properties
+application-local.properties
+application-dev.properties
+application-test.properties
+
+# IDE - IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# IDE - Eclipse
+.settings/
+.classpath
+.project
+.factorypath
+
+# IDE - VS Code
+.vscode/
+*.code-workspace
+
+# Environment Variables
+.env
+.env.local
+.env.*
+.env.*.local
+!.env.example
+application-secret.properties
+application-secret.yml
+
+# Logs
+logs/
+*.log
+spring.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*~
+*.bak
+
+# Node.js (if using frontend in same repo)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Kubernetes
+*.kubeconfig
